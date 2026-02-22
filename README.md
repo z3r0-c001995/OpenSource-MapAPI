@@ -1,5 +1,14 @@
 # OpenSource MapAPI
 
+Google-Maps-like open-source map API optimized for Zambia taxi workflows.
+
+See:
+- `docs/README.md`
+- `docs/openapi.yaml`
+- `packages/js-sdk`
+- `packages/php-sdk`
+- `examples/*`
+=======
 ## Overview
 OpenSource MapAPI is a powerful and flexible API that allows developers to integrate mapping functionalities into their applications. This API provides various endpoints to retrieve map data, manage geographic information, and perform spatial queries.
 
