@@ -1,0 +1,12 @@
+{
+  "name": "opensource/mapapi",
+  "description": "PHP SDK for OpenSource MapAPI",
+  "autoload": {
+    "psr-4": {
+      "OpenSourceMapApi\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.1"
+  }
+}

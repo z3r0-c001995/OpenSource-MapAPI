@@ -1,0 +1,73 @@
+openapi: 3.0.3
+info:
+  title: OpenSource MapAPI
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/maps/config:
+    get:
+      summary: Get map config
+      responses:
+        '200':
+          description: ok
+  /api/maps/autocomplete:
+    post:
+      summary: Autocomplete places
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query: { type: string, minLength: 2, maxLength: 120 }
+                location:
+                  type: object
+                  properties:
+                    lat: { type: number }
+                    lng: { type: number }
+      responses:
+        '200': { description: ok }
+  /api/maps/reverse-geocode:
+    post:
+      summary: Reverse geocode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [lat, lng]
+              properties:
+                lat: { type: number }
+                lng: { type: number }
+      responses:
+        '200': { description: ok }
+  /api/maps/route:
+    post:
+      summary: Compute route
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [origin, destination, travelMode]
+              properties:
+                origin:
+                  type: object
+                  properties:
+                    lat: { type: number }
+                    lng: { type: number }
+                destination:
+                  type: object
+                  properties:
+                    lat: { type: number }
+                    lng: { type: number }
+                travelMode:
+                  type: string
+                  enum: [DRIVE, WALK, BIKE]
+      responses:
+        '200': { description: ok }
